@@ -1,0 +1,17 @@
+# application.yml
+spring:
+  batch:
+    job:
+      enabled: true
+    jdbc:
+      initialize-schema: always
+
+permutation:
+  elements: A,B,C,D,E
+  chunk-size: 1000
+  throttle-limit: 8
+
+logging:
+  level:
+    com.example.batch: INFO
+    org.springframework.batch: INFO
