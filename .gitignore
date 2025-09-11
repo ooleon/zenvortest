@@ -36,6 +36,7 @@ target/
 *.iws
 *.iml
 *.ipr
+/.idea/inspectionProfiles/
 
 ### Eclipse ###
 .apt_generated

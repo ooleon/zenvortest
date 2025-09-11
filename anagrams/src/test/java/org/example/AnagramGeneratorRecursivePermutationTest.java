@@ -3,6 +3,7 @@ package org.example;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
@@ -12,7 +13,6 @@ import java.util.List;
  * To run these tests, add JUnit 5 to your project dependencies.
  * This class can be placed in a separate test file.
  */
-
 class AnagramGeneratorRecursivePermutationTest {
 
     @Test
