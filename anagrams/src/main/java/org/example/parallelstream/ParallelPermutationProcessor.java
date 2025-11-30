@@ -1,5 +1,7 @@
 package org.example.parallelstream;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +13,7 @@ import java.util.stream.IntStream;
 
 @Component
 public class ParallelPermutationProcessor implements ItemProcessor<String, List<String>> {
+    protected final Log logger = LogFactory.getLog(this.getClass());
 
     @Value("${parallelProcessor.elements:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40}")
     String string;
@@ -33,7 +36,7 @@ public class ParallelPermutationProcessor implements ItemProcessor<String, List<
                 .mapToObj(index -> generateNthPermutation(elements, index))
                 .map(permutation -> String.join(",", permutation))
                 .peek((s -> {
-                    System.out.print(s + " ");
+                    logger.info(s + " ");
                 }))
                 .peek((s -> {
                     System.out.println();

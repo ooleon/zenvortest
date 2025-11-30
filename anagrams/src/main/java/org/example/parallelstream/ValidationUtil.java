@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 @Component
 @Slf4j
 public class ValidationUtil {
-    private final Logger log = LoggerFactory.getLogger(ValidationUtil.class);
+    private static final Logger log = LoggerFactory.getLogger(ValidationUtil.class);
 
     private static final Pattern LETTERS_ONLY_PATTERN = Pattern.compile("^[a-zA-Z]+$");
     private static final int MAX_INPUT_LENGTH = 10; // Prevent excessive computation

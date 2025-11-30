@@ -10,6 +10,7 @@ import java.util.List;
 
 @Component
 public class PermutationItemWriter implements ItemWriter<List<String>> {
+//    protected final Log logger = LogFactory.getLog(this.getClass());
 
     private static final Logger logger = LoggerFactory.getLogger(PermutationItemWriter.class);
 

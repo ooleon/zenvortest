@@ -2,6 +2,10 @@ package org.example.parallelstream;
 
 //import org.springframework.batch.core.Job;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.job.Job;
 //import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 //import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -50,6 +54,7 @@ import java.util.List;
 @Configuration
 @EnableBatchProcessing
 public class ParallelPermutationBatchConfig {
+    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /*
     public ParallelPermutationBatchConfig(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
@@ -205,7 +210,7 @@ public class ParallelPermutationBatchConfig {
 
         try {
             processor.process("s");
-            System.out.println();
+            logger.info("taskExecutor processor processed");
 
         } catch (Exception e) {
             throw new RuntimeException(e);

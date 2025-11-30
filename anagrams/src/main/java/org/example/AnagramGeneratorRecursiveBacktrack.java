@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.parallelstream.ValidationUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -11,6 +15,7 @@ import java.util.stream.Collectors;
  * Uses recursive backtracking algorithm with modern Java features.
  */
 public class AnagramGeneratorRecursiveBacktrack {
+    private static final Logger logger = LoggerFactory.getLogger(AnagramGeneratorRecursiveBacktrack.class);
 
     /**
      * Generates all possible anagrams from a set of distinct letters.
@@ -119,14 +124,14 @@ public class AnagramGeneratorRecursiveBacktrack {
             var examples = List.of("abc", "ab", "a");
 
             for (String example : examples) {
-                System.out.println(String.format("Anagrams for '%s':",example));
+                logger.info(String.format("Anagrams for '%s':",example));
                 var anagrams = generateAnagrams(example);
                 anagrams.forEach(System.out::println);
                 System.out.println();
             }
 
         } catch (IllegalArgumentException e) {
-            System.out.println(String.format("Error: %s", e.getMessage()));
+            logger.info(String.format("Error: %s", e.getMessage()));
         }
     }
 }
