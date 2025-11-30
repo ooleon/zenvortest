@@ -11,13 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ValidationUtilTest {
 
-//    @Autowired
-//    ValidationUtil vu;
+    @Autowired
+    ValidationUtil vu;
 
     @Test
     void validateInputNotNullOrEmpty() {
 
-        /*
         ValidationException thrown;
         thrown = assertThrows(ValidationException.class, () -> {
                     vu.validateInputNotNullOrEmpty("");
@@ -33,7 +32,6 @@ class ValidationUtilTest {
                 }
         );
         assertTrue(thrown != null);
-        */
 
     }
 
